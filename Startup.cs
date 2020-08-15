@@ -34,7 +34,7 @@ namespace CommanderApi
             * Transient = New object instance created every time 
             */
             // services.AddScoped<ICommanderRespository, MockCommanderRepository>();
-            services.AddScoped<ICommanderRespository, SqlCommanderRepository>();
+            services.AddScoped<ICommanderRepository, SqlCommanderRepository>();
 
             // Register AutoMapper
             services.AddAutoMapper(typeof(Startup));

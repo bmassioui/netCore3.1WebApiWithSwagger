@@ -3,7 +3,7 @@ using CommanderApi.Models;
 
 namespace CommanderApi.Data
 {
-    public interface ICommanderRespository
+    public interface ICommanderRepository
     {
         /// <summary>
         /// Get list of commands

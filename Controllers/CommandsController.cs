@@ -13,10 +13,10 @@ namespace CommanderApi.Controllers
     [Route("api/[controller]")] //api/commands
     public class CommandsController : ControllerBase
     {
-        public readonly ICommanderRespository _respository;
+        public readonly ICommanderRepository _respository;
         private readonly IMapper _mapper;
 
-        public CommandsController(ICommanderRespository respository, IMapper mapper)
+        public CommandsController(ICommanderRepository respository, IMapper mapper)
         {
             _respository = respository;
             _mapper = mapper;
@@ -50,5 +50,17 @@ namespace CommanderApi.Controllers
 
             return Ok(result);
         }
+
+        // api/commands
+        [HttpPost]
+        public ActionResult<CommandReadDto> CreateCommand(CommandCreateDto commandCreateDto)
+        {
+            var command = _mapper.Map<Command>(commandCreateDto);
+
+            _respository.CreateCommand(command);
+
+            return Ok(command);
+        }
+
     }
 }

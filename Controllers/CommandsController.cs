@@ -62,5 +62,8 @@ namespace CommanderApi.Controllers
             return Ok(command);
         }
 
+        // Put
+
+        // Delete
     }
 }

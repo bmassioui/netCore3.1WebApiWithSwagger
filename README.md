@@ -22,12 +22,15 @@ Building a CRUD system for Command with MSSQL as RDBM, as a simple .Net Core 3.1
 # How to run the project
 
 Basically, these are the simple steps for how to run the project locally:
-    ## Requirements 
-    1. A RDBM(MSSQL, MYSQL, SqlLite) should be preconfigured yet locally or has a **ConnectionString** of a hosted RDBM somewhere else, *Note: configure which RDBM would you use for the project on startup.cs file and also replace the default ConnectionString on Json file*.
-    2. .Net Core 3.1 SDK.
-    3. Entity Framework Core.
-    4. Code Editor (VS Code is recommended) [Download VS Code](https://code.visualstudio.com/Download).
-    5. Postman to establish the test for project endpoints (else use browser is mostly enough)
+
+## Requirements 
+
+1. A RDBM(MSSQL, MYSQL, SqlLite) should be preconfigured yet locally or has a **ConnectionString** of a hosted RDBM somewhere else, *Note: configure which RDBM would you use for the project on startup.cs file and also replace the default ConnectionString on Json file*.
+2. .Net Core 3.1 SDK.
+3. Entity Framework Core.
+4. Code Editor (VS Code is recommended) [Download VS Code](https://code.visualstudio.com/Download).
+5. Postman to establish the test for project endpoints (else use browser is mostly enough)
+
 After making sure the your machine respond correctly to the requirements above, next steps :
 1. Use git source control to clone the project locally
 2. Use Terminal to build the entire project, typing the follwing command:

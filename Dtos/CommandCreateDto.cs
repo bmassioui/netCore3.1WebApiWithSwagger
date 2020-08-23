@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+ 
 namespace CommanderApi.Dtos
 {
     public class CommandCreateDto

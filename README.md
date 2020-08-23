@@ -32,22 +32,20 @@ Basically, these are the simple steps for how to run the project locally:
 5. Postman to establish the test for project endpoints (else use browser is mostly enough)
 
 After making sure the your machine respond correctly to the requirements above, next steps :
-1. Use git source control to clone the project locally
-2. Use Terminal to build the entire project, typing the follwing command:
+I. Use git source control to clone the project locally
+II. Use Terminal to build the entire project, typing the follwing command:
     ```bash
     .../CommanderAPI> dotnet build
     ```
-3. Run the Entity framework core immigration:
+III. Run the Entity framework core immigration:
    ```bash
     .../CommanderAPI> dotnet ef database update
     ```
-4. Run the project:
+IV. Run the project (http://localhost:5000/ , https://localhost:5001/):
     ```bash
     .../CommanderAPI> dotnet run
     ```
-   the project will run on 2 ports, which are (localhost:5000, localhost:5001), the first which normal HTTP and Secode with HTTPS.
-5. Use postman to test exemple :
+V. Use postman to test exemple (get a list of commands) :
     ```bash
     http://localhost:5000/api/commands
     ```
-    to get list of commands

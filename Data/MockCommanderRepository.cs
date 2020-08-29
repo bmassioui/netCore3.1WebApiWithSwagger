@@ -5,11 +5,6 @@ namespace CommanderApi.Data
 {
     public class MockCommanderRepository : ICommanderRepository
     {
-        public void CreateCommand(Command command)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public IEnumerable<Command> GetAll()
         {
             var commands = new List<Command> {
@@ -30,6 +25,21 @@ namespace CommanderApi.Data
                 Line = "Boil water",
                 Platform = "Kettle & pan"
             };
+        }
+
+        public void CreateCommand(Command command)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void UpdateCommand(Command command)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void DeleteCommand(Command command)
+        {
+            throw new System.NotImplementedException();
         }
 
         public bool SaveChanges()

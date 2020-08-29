@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json.Serialization;
 
 namespace CommanderApi
 {
@@ -24,7 +25,9 @@ namespace CommanderApi
             services.AddDbContext<CommanderContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("CommanderDbConnectionString")));
 
-            services.AddControllers();
+            // Force system to accept only the JSON Properties that match the setting
+            services.AddControllers()
+                    .AddNewtonsoftJson(s => { s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver(); });
 
             // DI
             /*

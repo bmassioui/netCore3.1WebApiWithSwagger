@@ -4,6 +4,7 @@ using AutoMapper;
 using CommanderApi.Data;
 using CommanderApi.Dtos;
 using CommanderApi.Models;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CommanderApi.Controllers
@@ -63,13 +64,80 @@ namespace CommanderApi.Controllers
 
             var commandReadDto = _mapper.Map<CommandReadDto>(command);
 
-            return CreatedAtRoute(nameof(GetById), new {Id = commandReadDto.Id}, commandReadDto); // 201 Created
+            return CreatedAtRoute(nameof(GetById), new { Id = commandReadDto.Id }, commandReadDto); // 201 Created
         }
 
-        // Put
+        // Put (Update the entire resource)
+        // api/commands/{id}
+        [HttpPut("{id}")]
+        public ActionResult UpdateCommand(int id, CommandUpdateDto commandUpdateDto)
+        {
+            var command = _respository.GetById(id);
 
-        // Patch
+            if (command == null)
+                return NotFound(); // 404
+
+
+            _mapper.Map(commandUpdateDto, command);
+
+            _respository.UpdateCommand(command);
+
+            return NoContent(); // 204
+        }
+
+        // Patch (Update the partial resource)
+        // api/commands/{id}
+        // https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.jsonpatch.jsonpatchdocument?view=aspnetcore-3.0
+        // Expected value [{"op" : "", "path": "", "value" : ""}] operation {copy/remove/move/replace}
+        // the possibility to passe more object within the array to update multiple lines
+        /*
+        [
+         {
+          "op": "replace",
+          "path": "/HowTo",
+          "value": "1005 HowTo"
+         },
+         {
+          "op": "replace",
+          "path": "/Line",
+          "value": "1005 Line"
+         }
+        ]
+      */
+        [HttpPatch("{id}")]
+        public ActionResult PartialCommandUpdate(int id, JsonPatchDocument<CommandUpdateDto> patchDocument)
+        {
+            var command = _respository.GetById(id);
+
+            if (command == null)
+                return NotFound(); // 404
+
+            var commandToPatch = _mapper.Map<CommandUpdateDto>(command);
+
+            patchDocument.ApplyTo(commandToPatch, ModelState);
+
+            if (!TryValidateModel(commandToPatch))
+                return ValidationProblem(ModelState); // 400 bad request
+
+            _mapper.Map(commandToPatch, command);
+            _respository.UpdateCommand(command);
+
+            return NoContent(); // 204
+        }
 
         // Delete
+        // api/commands/{id}
+        [HttpDelete("{id}")]
+        public ActionResult DeleteCommand(int id)
+        {
+            var command = _respository.GetById(id);
+
+            if (command == null)
+                return NotFound(); // 404
+
+            _respository.DeleteCommand(command);
+
+            return NoContent();
+        }
     }
 }

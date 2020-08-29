@@ -64,3 +64,8 @@ D:\DotNetCoreProject\CommanderApi\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.
 D:\DotNetCoreProject\CommanderApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 D:\DotNetCoreProject\CommanderApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\DotNetCoreProject\CommanderApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\DotNetCoreProject\CommanderApi\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\DotNetCoreProject\CommanderApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\DotNetCoreProject\CommanderApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\DotNetCoreProject\CommanderApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\DotNetCoreProject\CommanderApi\obj\Debug\netcoreapp3.1\CommanderApi.MvcApplicationPartsAssemblyInfo.cs

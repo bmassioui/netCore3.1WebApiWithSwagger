@@ -24,6 +24,10 @@ namespace CommanderApi.Controllers
         }
 
         // api/commands
+        /// <summary>
+        /// Read all resources
+        /// </summary>
+        /// <returns></returns>
         [HttpGet] // Action verb
         public ActionResult<IEnumerable<CommandReadDto>> GetAll()
         {
@@ -38,6 +42,11 @@ namespace CommanderApi.Controllers
         }
 
         // api/commands/{id}
+        /// <summary>
+        /// Read single resource
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}", Name = "GetById")]
         public ActionResult<CommandReadDto> GetById(int id)
         {
@@ -53,6 +62,11 @@ namespace CommanderApi.Controllers
         }
 
         // api/commands
+        /// <summary>
+        /// Create a new resource
+        /// </summary>
+        /// <param name="commandCreateDto"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult<CommandReadDto> CreateCommand(CommandCreateDto commandCreateDto)
         {
@@ -69,6 +83,12 @@ namespace CommanderApi.Controllers
 
         // Put (Update the entire resource)
         // api/commands/{id}
+        /// <summary>
+        /// Update an entire resource
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="commandUpdateDto"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public ActionResult UpdateCommand(int id, CommandUpdateDto commandUpdateDto)
         {
@@ -104,6 +124,12 @@ namespace CommanderApi.Controllers
          }
         ]
       */
+      /// <summary>
+      /// Update partial resource
+      /// </summary>
+      /// <param name="id"></param>
+      /// <param name="patchDocument"></param>
+      /// <returns></returns>
         [HttpPatch("{id}")]
         public ActionResult PartialCommandUpdate(int id, JsonPatchDocument<CommandUpdateDto> patchDocument)
         {
@@ -127,6 +153,11 @@ namespace CommanderApi.Controllers
 
         // Delete
         // api/commands/{id}
+        /// <summary>
+        /// Delete a single resource
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public ActionResult DeleteCommand(int id)
         {

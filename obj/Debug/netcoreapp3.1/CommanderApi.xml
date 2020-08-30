@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CommanderApi</name>
+    </assembly>
+    <members>
+        <member name="M:CommanderApi.Controllers.CommandsController.GetAll">
+            <summary>
+            Read all resources
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CommanderApi.Controllers.CommandsController.GetById(System.Int32)">
+            <summary>
+            Read single resource
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommanderApi.Controllers.CommandsController.CreateCommand(CommanderApi.Dtos.CommandCreateDto)">
+            <summary>
+            Create a new resource
+            </summary>
+            <param name="commandCreateDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommanderApi.Controllers.CommandsController.UpdateCommand(System.Int32,CommanderApi.Dtos.CommandUpdateDto)">
+            <summary>
+            Update an entire resource
+            </summary>
+            <param name="id"></param>
+            <param name="commandUpdateDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommanderApi.Controllers.CommandsController.PartialCommandUpdate(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{CommanderApi.Dtos.CommandUpdateDto})">
+            <summary>
+            Update partial resource
+            </summary>
+            <param name="id"></param>
+            <param name="patchDocument"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommanderApi.Controllers.CommandsController.DeleteCommand(System.Int32)">
+            <summary>
+            Delete a single resource
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommanderApi.Data.ICommanderRepository.GetAll">
+            <summary>
+            Get list of commands
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CommanderApi.Data.ICommanderRepository.GetById(System.Int32)">
+            <summary>
+            Get command by Id
+            </summary>
+            <param name="id">CommandId</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommanderApi.Data.ICommanderRepository.CreateCommand(CommanderApi.Models.Command)">
+            <summary>
+            Create a new Command
+            </summary>
+            <param name="command"></param>
+        </member>
+        <member name="M:CommanderApi.Data.ICommanderRepository.UpdateCommand(CommanderApi.Models.Command)">
+            <summary>
+            Update existing Command
+            </summary>
+            <param name="command"></param>
+        </member>
+        <member name="M:CommanderApi.Data.ICommanderRepository.DeleteCommand(CommanderApi.Models.Command)">
+            <summary>
+            Delete existing Command
+            </summary>
+            <param name="command"></param>
+        </member>
+        <member name="M:CommanderApi.Data.ICommanderRepository.SaveChanges">
+            <summary>
+            Save changes applied on an entity model
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

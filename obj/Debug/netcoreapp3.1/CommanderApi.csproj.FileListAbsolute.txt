@@ -69,3 +69,5 @@ D:\DotNetCoreProject\CommanderApi\obj\Debug\netcoreapp3.1\staticwebassets\Comman
 D:\DotNetCoreProject\CommanderApi\obj\Debug\netcoreapp3.1\CommanderApi.dll
 D:\DotNetCoreProject\CommanderApi\obj\Debug\netcoreapp3.1\CommanderApi.pdb
 D:\DotNetCoreProject\CommanderApi\obj\Debug\netcoreapp3.1\CommanderApi.genruntimeconfig.cache
+D:\DotNetCoreProject\CommanderApi\bin\Debug\netcoreapp3.1\CommanderApi.xml
+D:\DotNetCoreProject\CommanderApi\obj\Debug\netcoreapp3.1\CommanderApi.xml

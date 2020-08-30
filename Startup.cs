@@ -36,24 +36,24 @@ namespace CommanderApi
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                // c.SwaggerDoc("V1.0", new OpenApiInfo
-                // {
-                //     Version = "V1.0",
-                //     Title = "Commander API",
-                //     Description = "A simple Commander ASP.NET Core Web API",
-                //     TermsOfService = new Uri("https://example.com/terms"),
-                //     Contact = new OpenApiContact
-                //     {
-                //         Name = "Bouchaib MASSIOUI",
-                //         Email = string.Empty,
-                //         Url = new Uri("https://twitter.com/BMassioui"),
-                //     },
-                //     License = new OpenApiLicense
-                //     {
-                //         Name = "Use under LICX",
-                //         Url = new Uri("https://example.com/license"),
-                //     }
-                // });
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Commander API",
+                    Description = "A simple Commander ASP.NET Core Web API",
+                    TermsOfService = new Uri("https://example.com/terms"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Bouchaib MASSIOUI",
+                        Email = string.Empty,
+                        Url = new Uri("https://twitter.com/BMassioui"),
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Use under LICX",
+                        Url = new Uri("https://example.com/license"),
+                    }
+                });
 
                 // Set the comments path for the Swagger JSON and UI.
                 // need to enabled to generate xml file firstly
@@ -94,8 +94,8 @@ namespace CommanderApi
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Commander API V1.0");
-                // c.RoutePrefix = string.Empty;
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Commander API v1");
+                c.RoutePrefix = string.Empty;  // Automatically redirect to swagger  ===> https://localhost:5001/index.html
             });
 
             app.UseRouting();
